@@ -62,7 +62,7 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.TicketVi
         }
 
         if (ticket.getPrice() != null) {
-            ticketViewHolder.price.setText("₹" + String.format("%.0f", ticket.getPrice().getPrice()));
+            ticketViewHolder.price.setText("₹" + String.format("%d", ticket.getPrice().getPrice()));
             ticketViewHolder.numberOfSeats.setText(ticket.getPrice().getSeats() + " Seats");
             ticketViewHolder.loader.setVisibility(View.INVISIBLE);
         } else {

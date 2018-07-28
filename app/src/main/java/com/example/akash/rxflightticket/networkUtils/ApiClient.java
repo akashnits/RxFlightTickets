@@ -58,5 +58,6 @@ public class ApiClient {
                 return chain.proceed(requestBuilder.build());
             }
         });
+        okHttpClient= builder.build();
     }
 }
