@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         1. Get observable for each ticket (can be achieved by using Observable.fromIterable(listContainingTickets))
         2. Use concatMap to combine this with priceObservable
      */
-
+disposable.add(
         ticketObservable
                 .subscribeOn(Schedulers.io())
                 .flatMap(new Function<List<Ticket>, ObservableSource<Ticket>>() {
@@ -135,7 +135,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete() {
 
                     }
-                });
+                })
+        );
     }
 
 
